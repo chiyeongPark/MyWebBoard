@@ -1,3 +1,5 @@
+//환경변수 불러오기
+require('dotenv').config();
 //express 모듈
 const express = require('express');
 //path 모듈
