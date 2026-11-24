@@ -2,7 +2,7 @@
 require('dotenv').config();
 
 //mysql 모듈 불러오기
-const mysql = require('mysql2/promse');
+const mysql = require('mysql2/promise');
 
 //DB 연결 설정
 const dbConfig = {
