@@ -10,3 +10,5 @@ router.route('/reg')
 .post(async(req,res)=>{
  
 });
+
+module.exports = router;
