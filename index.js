@@ -12,6 +12,19 @@ app.get('/', (req,res) => {
     res.status(200);
     res.send('MyWebBoard');
 });
+//뷰 엔진 설정
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+//정적 파일 서비스 설정
+app.use(express.static(path.join(__dirname, 'public')));
+
+//바디파서
+app.use(express.json()); // application/json 파싱
+app.use(express.urlencoded({extended:true})); //application/x-www-form-urlencoded 파싱
+
+//라우터 미들웨어 등록
+app.use('/users', require('./routes/userRoutes'));
 
 //서버 실행
 app.listen(PORT,'0.0.0.0', () => {
